@@ -30,8 +30,8 @@ function resize() {
 resize();
 
 var base_image = new Image(112, 112);
-base_image.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-document.body.appendChild(base_image, canvas.width/2, canvas.height/2);
+baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
+document.body.appendChild(baseImage, baseImage.position.x = canvas.width/2, baseImage.position.y =canvas.height/2);
 
 window.addEventListener('resize', resize);
 
@@ -54,7 +54,9 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x-(Date.now()-lastFrame)/1000, emoteGroup.y--(Date.now()-lastFrame)/1000);
+            emote.position.x += delta * 10
+            emote.position.y -= delta*15
+            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y;
             xOffset = emote.gif.canvas.width;
         }
 
