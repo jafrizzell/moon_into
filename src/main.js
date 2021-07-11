@@ -31,7 +31,7 @@ resize();
 
 var base_image = new Image(112, 112);
 base_image.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-document.body.appendChild(base_image, window.innerWidth/2, window.innerHeight/2);
+document.body.appendChild(base_image, canvas.width/2, canvas.height/2);
 
 window.addEventListener('resize', resize);
 
@@ -72,8 +72,8 @@ const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
     emoteArray.push({
         emotes,
-        x: Math.floor(Math.random() * canvas.width),
-        y: Math.floor(Math.random() * canvas.height),
+        x: Math.floor(Math.random() * (canvas.width - 112)),
+        y: Math.floor(Math.random() * (canvas.height - 112)),
         spawn: Date.now()
     });
 })
