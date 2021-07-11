@@ -54,8 +54,19 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.x += delta * 10;
-            emoteGroup.y -= delta * 15;
+            
+            if (delta < 1) {
+                            emoteGroup.y += delta * 15; 
+            }
+            
+            if ( 1 <= delta < 4) {
+                            emoteGroup.y += delta * 45
+            }
+            
+            if ( 4 <= delta) {
+                            emoteGroup.y += delta * 15
+            }
+
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
             xOffset = emote.gif.canvas.width;
         }
