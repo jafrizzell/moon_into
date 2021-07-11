@@ -45,6 +45,7 @@ function draw() {
     const delta = (Date.now() - lastFrame) / 1000;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.body.appendChild(base_image, canvas.width/2, canvas.height/2);
 
     for (let o = emoteArray.length - 1; o >= 0; o--) {
         const emoteGroup = emoteArray[o];
@@ -54,7 +55,7 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x-delta, emoteGroup.y-delta);
             xOffset = emote.gif.canvas.width;
         }
 
