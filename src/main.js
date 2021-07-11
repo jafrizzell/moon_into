@@ -1,7 +1,7 @@
 import Chat from 'twitch-chat-emotes';
 
 // a default array of twitch channels to join
-let channels = ['A_Seagull', 'MOONMOON', 'itsRyanHiga'];
+let channels = ['MOONMOON'];
 
 // the following few lines of code will allow you to add ?channels=channel1,channel2,channel3 to the URL in order to override the default array of channels
 const query_vars = {};
@@ -31,9 +31,9 @@ resize();
 
 var base_image = new Image(112, 112);
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-baseImage.position.x = canvas.width/2
-baseImage.position.y = canvas.height/2
-document.body.appendChild(baseImage, baseImage.position.x, baseImage.position.y);
+float positionx = canvas.width/2
+float positiony = canvas.height/2
+document.body.appendChild(baseImage, positionx, positiony);
 
 window.addEventListener('resize', resize);
 
