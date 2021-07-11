@@ -31,9 +31,7 @@ resize();
 
 var base_image = new Image(112, 112);
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-float positionx = canvas.width/2;
-float positiony = canvas.height/2;
-document.body.appendChild(baseImage, positionx, positiony);
+document.body.appendChild(baseImage, canvas.width/2, canvas.height/2);
 
 window.addEventListener('resize', resize);
 
