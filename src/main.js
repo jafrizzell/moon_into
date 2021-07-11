@@ -39,7 +39,7 @@ baseImage.onload = function() {
   this.style.top = (canvas.height - imageHeight)/2 +'px';
 }
 
-ctx.globalCompositeOperation = 'source-over';
+ctx.globalCompositeOperation = 'source-atop';
 document.body.appendChild(baseImage);
 
 window.addEventListener('resize', resize);
