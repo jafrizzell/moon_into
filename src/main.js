@@ -59,11 +59,11 @@ function draw() {
                             emoteGroup.y += delta * 15; 
             }
             
-            if ( 0.5 <= delta < 2.0) {
+            else if ( 0.5 <= delta < 2.0) {
                             emoteGroup.y -= delta * 45
             }
             
-            if ( 2.0 <= delta) {
+            else if ( 2.0 <= delta) {
                             emoteGroup.y += delta * 15
             }
 
