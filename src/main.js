@@ -21,12 +21,12 @@ const ChatInstance = new Chat({
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
-htmlImageElement img = ctx.HTMLImageElement('https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true')
+base_image = new Image()
+base_image.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true'
+ctx.drawImage(base_image, 100, 100)
 
 function resize() {
-    base_image = new Image()
-    base_image.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true'
-    ctx.drawImage(base_image, 100, 100)
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
