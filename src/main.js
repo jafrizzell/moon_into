@@ -36,8 +36,7 @@ baseImage.onload = function() {
       imageHeight = this.offsetHeight;
   this.style.position = 'absolute'
   this.style.left = (canvas.width - imageWidth)/2 + 'px';
-  this.style.top = (canvas.height - imageHeight)/2 +
-                   window.pageYOffset + 'px';
+  this.style.top = (canvas.height - imageHeight)/2 +'px';
 }
 
 document.body.appendChild(baseImage);
