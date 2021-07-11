@@ -37,6 +37,7 @@ baseImage.onload = function() {
   this.style.position = 'absolute'
   this.style.left = (canvas.width - imageWidth)/2 + 'px';
   this.style.top = (canvas.height - imageHeight)/2 +'px';
+  context.globalCompositeOperation="destination-under";
 }
 
 document.body.appendChild(baseImage);
