@@ -29,9 +29,9 @@ function resize() {
 }
 resize();
 
-// var base_image = new Image(112, 112);
-// baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-// document.body.appendChild(baseImage, canvas.width/2, canvas.height/2);
+var base_image = new Image(112, 112);
+baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
+document.body.appendChild(baseImage, class='/center/');
 
 window.addEventListener('resize', resize);
 
