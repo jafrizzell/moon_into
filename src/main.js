@@ -60,15 +60,16 @@ function draw() {
             }
             
             else if ( 0.5 <= delta < 2.0) {
-                            emoteGroup.y -= delta * 45
+                            emoteGroup.y += delta * 30
             }
             
-            else if ( 2.0 <= delta) {
-                            emoteGroup.y += delta * 15
+            else {
+                            emoteGroup.y += delta * 60
             }
-
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+            
             xOffset = emote.gif.canvas.width;
+            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+
         }
 
         // Delete a group after 10 seconds
