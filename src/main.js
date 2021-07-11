@@ -39,7 +39,7 @@ baseImage.onload = function() {
   this.style.top = (canvas.height - imageHeight)/2 +'px';
 }
 
-ctx.globalCompositeOperation = 'destination-out';
+// ctx.globalCompositeOperation = 'destination-out';
 document.body.appendChild(baseImage);
 
 window.addEventListener('resize', resize);
@@ -78,6 +78,7 @@ function draw() {
             
             xOffset = emote.gif.canvas.width;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+            ctx.globalCompositeOperation = 'source-over';
 
         }
 
