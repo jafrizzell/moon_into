@@ -31,8 +31,8 @@ resize();
 
 var base_image = new Image(112, 112);
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-float positionx = canvas.width/2
-float positiony = canvas.height/2
+float positionx = canvas.width/2;
+float positiony = canvas.height/2;
 document.body.appendChild(baseImage, positionx, positiony);
 
 window.addEventListener('resize', resize);
@@ -56,8 +56,8 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emote.position.x += delta * 10
-            emote.position.y -= delta * 15
+            emote.position.x += delta * 10;
+            emote.position.y -= delta * 15;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
             xOffset = emote.gif.canvas.width;
         }
