@@ -21,7 +21,7 @@ const ChatInstance = new Chat({
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
-base_image = new Image(112, 112);
+var base_image = new Image(112, 112);
 base_image.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
 document.body.appendChild(base_image);
 
