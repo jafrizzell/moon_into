@@ -29,11 +29,11 @@ function resize() {
 }
 resize();
 
-// var base_image = new Image(112, 112);
-// baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-// baseImage.position.x = canvas.width/2
-// baseImage.position.y = canvas.height/2
-// document.body.appendChild(baseImage, baseImage.position.x, baseImage.position.y);
+var base_image = new Image(112, 112);
+baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
+baseImage.position.x = canvas.width/2
+baseImage.position.y = canvas.height/2
+document.body.appendChild(baseImage, baseImage.position.x, baseImage.position.y);
 
 window.addEventListener('resize', resize);
 
