@@ -29,8 +29,8 @@ function resize() {
 }
 resize();
 
-var baseImage = new Image(112, 112);
-baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
+var baseImage = new Image();
+baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/better_moon2COFFEE.png?raw=true';
 baseImage.onload = function() {
    var imageWidth = this.offsetWidth,
       imageHeight = this.offsetHeight;
