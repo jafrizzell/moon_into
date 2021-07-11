@@ -29,9 +29,9 @@ function resize() {
 }
 resize();
 
-var base_image = new Image(112, 112);
-baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
-document.body.appendChild(baseImage, canvas.width/2, canvas.height/2);
+// var base_image = new Image(112, 112);
+// baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/moon2A.png?raw=true';
+// document.body.appendChild(baseImage, canvas.width/2, canvas.height/2);
 
 window.addEventListener('resize', resize);
 
@@ -54,8 +54,8 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emote.position.x += delta * 10;
-            emote.position.y -= delta * 15;
+//             emote.position.x += delta * 10;
+//             emote.position.y -= delta * 15;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
             xOffset = emote.gif.canvas.width;
         }
