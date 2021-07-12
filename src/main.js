@@ -34,6 +34,7 @@ var foreground = new Image();
 foreground.src = "https://github.com/jafrizzell/moon_intro/blob/main/Untitled17_20210712161921.png?raw=true";
 foreground.onload = function() {
     ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
+}
 
 let lastFrame = Date.now();
 // Called once per frame
