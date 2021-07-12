@@ -31,7 +31,9 @@ resize();
 
 var baseImage = new Image();
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
-ctx.drawImage(baseImage, 100, 100);
+baseImage.onload = function() {
+    ctx.drawImage(baseImage, 100, 100);
+}
 
 // ctx.globalCompositeOperation = 'destination-out';
 
