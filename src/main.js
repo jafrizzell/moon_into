@@ -20,7 +20,7 @@ const ChatInstance = new Chat({
 
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
-var ctx = canvas.getContext('2d'),
+var ctx = canvas.querySelector("canvas").getContext('2d'),
       baseImage = new Image;
 
 function resize() {
