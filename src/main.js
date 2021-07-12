@@ -78,7 +78,7 @@ function draw() {
             
             xOffset = emote.gif.canvas.width;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
-            ctx.globalCompositeOperation = 'source-over';
+//             ctx.globalCompositeOperation = 'source-over';
 
         }
 
