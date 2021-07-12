@@ -30,17 +30,17 @@ resize();
 
 // GET THE IMAGE.
 var img = new Image();
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 img.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 
 // WAIT TILL IMAGE IS LOADED.
 img.onload = function () {
-    fill_canvas(img);       // FILL THE CANVAS WITH THE IMAGE.
+    fill_canvas(img, ctx);       // FILL THE CANVAS WITH THE IMAGE.
 }
 
-function fill_canvas(img) {
+function fill_canvas(img, ctx) {
     // CREATE CANVAS CONTEXT.
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
 
     canvas.width = img.width;
     canvas.height = img.height;
