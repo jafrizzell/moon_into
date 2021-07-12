@@ -29,12 +29,15 @@ function resize() {
 }
 resize();
 
-var baseImage = new Image();
-baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
-baseImage.onload = function() {
-    ctx.drawImage(baseImage, 100, 100);
-}
+make_base();
 
+function make_base() {
+    baseImage = new Image();
+    baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
+    baseImage.onload = function() {
+        ctx.drawImage(baseImage, 100, 100);
+       }
+}
 // ctx.globalCompositeOperation = 'destination-out';
 
 
