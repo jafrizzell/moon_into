@@ -29,7 +29,7 @@ resize();
 window.addEventListener('resize', resize);
 
 var background = new Image();
-background.src = "https://i.imgur.com/yf6d9SX.jpg";
+background.src = "http://i.imgur.com/yf6d9SX.jpg";
 background.onload = function() {
     ctx.drawImage(background, 0, 0);
 }
