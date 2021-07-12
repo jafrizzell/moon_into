@@ -31,7 +31,7 @@ resize();
 // GET THE IMAGE.
 var img = new Image();
 var ctx = canvas.getContext('2d');
-img.src = 'https://tenor.com/view/lofi-girl-music-gif-22068613';
+img.src = 'https://raw.githubusercontent.com/jafrizzell/moon_intro/main/deadlole.JPG';
 
 img.onload = function() {
     ctx.drawImage(img, 0, 0);
