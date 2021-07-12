@@ -26,28 +26,28 @@ function resize() {
     canvas.height = window.innerHeight;
 }
 resize();
-window.onload = function () {
 
-    // GET THE IMAGE.
-    var img = new Image();
-    img.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 
-    // WAIT TILL IMAGE IS LOADED.
-    img.onload = function () {
-        fill_canvas(img);       // FILL THE CANVAS WITH THE IMAGE.
-    }
+// GET THE IMAGE.
+var img = new Image();
+img.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 
-    function fill_canvas(img) {
-        // CREATE CANVAS CONTEXT.
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-
-        canvas.width = img.width;
-        canvas.height = img.height;
-
-        ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
-    }
+// WAIT TILL IMAGE IS LOADED.
+img.onload = function () {
+    fill_canvas(img);       // FILL THE CANVAS WITH THE IMAGE.
 }
+
+function fill_canvas(img) {
+    // CREATE CANVAS CONTEXT.
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
+}
+
 // ctx.globalCompositeOperation = 'destination-out';
 
 
