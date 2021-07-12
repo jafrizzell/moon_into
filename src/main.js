@@ -80,8 +80,8 @@ const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
     emoteArray.push({
         emotes,
-        x: Math.floor(0.125 * canvas.width + Math.random() * 100),
-        y: Math.floor(0.75 * canvas.height),
+        x: Math.floor(0.1 * canvas.width + Math.random() * 60),
+        y: Math.floor(0.7 * canvas.height),
         spawn: Date.now()
     });
 })
