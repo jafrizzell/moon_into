@@ -72,7 +72,7 @@ ChatInstance.on("emotes", (emotes) => {
     emoteArray.push({
         emotes,
         x: Math.floor(0.5 * canvas.width + Math.random() * 10),
-        y: Math.floor(0.8 * (canvas.height),
+        y: Math.floor(0.8 * canvas.height),
         spawn: Date.now()
     });
 })
