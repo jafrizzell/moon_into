@@ -83,6 +83,6 @@ ChatInstance.on("emotes", (emotes) => {
             spawn: Date.now()
         })
     }
-}
+})
 
 draw();
