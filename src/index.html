@@ -11,30 +11,21 @@
             background-size: 100% 100%;
         }
         
-        html, body {
+        html, canvas, body {
             width: 100%;
             height: 100%;
             margin: 0;
         }
-        img.make-it-fit {
-            max-width: 100%;
-            max-height: 100%;
+        img {
+          padding: 0;
+          display: block;
+          margin: 0 auto;
+          max-height: 100%;
+          max-width: 100%;
         }
-        div.fill-screen {
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            max-width: 100%;
-            max-height: 100%;
-            margin: 0;
-        }
-
     </style>
 </head>
 <body>
-<div class='imgbox'>
-    <img class='center-fit' src='https://github.com/jafrizzell/moon_intro/blob/main/Untitled17_20210712161921.png?raw=true'>
-</div>
+    <img src='https://github.com/jafrizzell/moon_intro/blob/main/Untitled17_20210712161921.png?raw=true' />
 </body>
 </html>
