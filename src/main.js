@@ -26,23 +26,29 @@ function resize() {
     canvas.height = window.innerHeight;
 }
 resize();
+window.addEventListener('resize', resize);
+
+const ctx = canvas.getContext('2d');
+const image = document.getElementById('https://raw.githubusercontent.com/jafrizzell/moon_intro/main/deadlole.JPG');
+
+image.addEventListener('load', e => {
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+});
+
 
 
 // GET THE IMAGE.
-var img = new Image();
-var ctx = canvas.getContext('2d');
-img.src = 'https://raw.githubusercontent.com/jafrizzell/moon_intro/main/deadlole.JPG';
+// var img = new Image();
+// var ctx = canvas.getContext('2d');
+// img.src = 'https://raw.githubusercontent.com/jafrizzell/moon_intro/main/deadlole.JPG';
 
-img.onload = function() {
-    ctx.drawImage(img, 0, 0);
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    console.log(canvas.width);
-}
+// img.onload = function() {
+//     ctx.drawImage(img, 0, 0);
+//     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+//     console.log(canvas.width);
+// }
 
-ctx.globalCompositeOperation = 'destination-out';
-
-
-window.addEventListener('resize', resize);
+// ctx.globalCompositeOperation = 'destination-out';
 
 
 let lastFrame = Date.now();
