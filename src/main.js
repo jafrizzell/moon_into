@@ -42,7 +42,7 @@ function fill_canvas(img, ctx) {
 
     canvas.width = img.width;
     canvas.height = img.height;
-    console.log('here')'
+    console.log(canvas.width)';
     ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
 }
 
