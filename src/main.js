@@ -20,8 +20,8 @@ const ChatInstance = new Chat({
 
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
-// const ctx = canvas.getContext('2d'),
-//       baseImage = new Image;
+const ctx = canvas.getContext('2d');
+var baseImage = new Image;
 
 function resize() {
 
@@ -32,8 +32,7 @@ resize();
 
 
 baseImage.onload = function() {
-    const ctx = canvas.getContext('2d'),
-      baseImage = new Image;
+
     cxt.drawImage(this, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(this, 0, 0);
 }
