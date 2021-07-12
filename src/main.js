@@ -32,7 +32,7 @@ window.addEventListener('resize', resize);
 var background = new Image();
 background.src = "https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true";
 background.onload = function() {
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(background, 0, 0);
 }
 
 let lastFrame = Date.now();
