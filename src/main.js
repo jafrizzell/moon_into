@@ -29,7 +29,7 @@ function resize() {
 }
 resize();
 
-var baseImage = new Image(810, 1080);
+var baseImage = new Image(canvas.width, canvas.height);
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 baseImage.onload = function() {
    var imageWidth = this.offsetWidth,
