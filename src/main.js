@@ -61,7 +61,7 @@ function draw() {
             emoteGroup.y -= (Math.random() + 1) * delta * 30; 
 
             xOffset = emote.gif.canvas.width;
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
 //             ctx.globalCompositeOperation = 'source-over';
 
         }
