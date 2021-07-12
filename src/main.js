@@ -25,6 +25,11 @@ document.body.appendChild(canvas);
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    var background = new Image();
+    background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/9b633227f46b3b3826c19312eacf91f793a389be/lofi.gif";
+    background.onload = function() {
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    }
 }
 resize();
 window.addEventListener('resize', resize);
