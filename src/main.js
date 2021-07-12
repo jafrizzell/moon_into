@@ -20,7 +20,7 @@ const ChatInstance = new Chat({
 
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
-ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
 
 function resize() {
@@ -32,7 +32,7 @@ resize();
 make_base();
 
 function make_base() {
-    baseImage = new Image();
+    var baseImage = new Image();
     baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
     baseImage.onload = function() {
         ctx.drawImage(baseImage, 0, 0);
