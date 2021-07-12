@@ -43,7 +43,9 @@ function fill_canvas(img, ctx) {
     canvas.width = img.width;
     canvas.height = img.height;
     console.log(canvas.width);
-    ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+//     ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
 }
 
 // ctx.globalCompositeOperation = 'destination-out';
