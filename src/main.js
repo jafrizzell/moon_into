@@ -58,7 +58,6 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            
             emoteGroup.y -= (Math.random() + 1) * delta * 30; 
 
             xOffset = emote.gif.canvas.width;
@@ -81,8 +80,8 @@ const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
     emoteArray.push({
         emotes,
-        x: Math.floor(0.2 * canvas.width + Math.random() * 100),
-        y: Math.floor(0.8 * canvas.height),
+        x: Math.floor(0.125 * canvas.width + Math.random() * 100),
+        y: Math.floor(0.75 * canvas.height),
         spawn: Date.now()
     });
 })
