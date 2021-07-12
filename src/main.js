@@ -79,7 +79,7 @@ ChatInstance.on("emotes", (emotes) => {
         y: Math.floor(0.65 * canvas.height),
         spawn: Date.now()
         
-            console.log(emotes);
+        console.log(emotes);
     if (emote.name == 'NaM' || emote.name == 'Fishmoley') {}
     else {
         emoteArray.push({
