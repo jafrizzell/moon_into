@@ -19,7 +19,7 @@ const ChatInstance = new Chat({
 })
 
 const canvas = document.createElement('canvas');
-document.body.appendChild(canvas);
+// document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
 
 function resize() {
@@ -29,6 +29,11 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
+var background = new Image();
+background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/main/deadlole.JPG";
+background.onload = function() {
+    ctx.drawImage(background, 0, 0);
+}
 
 let lastFrame = Date.now();
 // Called once per frame
