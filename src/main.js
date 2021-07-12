@@ -81,4 +81,4 @@ background.onload = function() {
 //     });
 // })
 
-draw();
+// draw();
