@@ -58,7 +58,7 @@ function draw() {
 
             xOffset = emote.gif.canvas.width;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
-            ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
+
 //             ctx.globalCompositeOperation = 'source-over';
 
         }
@@ -68,7 +68,7 @@ function draw() {
             emoteArray.splice(o, 1);
         }
     }
-
+    ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
     lastFrame = Date.now();
 }
 
