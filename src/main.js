@@ -30,56 +30,56 @@ resize();
 window.addEventListener('resize', resize);
 
 var background = new Image();
-background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/lofi.gif";
+background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/9b633227f46b3b3826c19312eacf91f793a389be/lofi.gif";
 background.onload = function() {
     ctx.drawImage(background, 0, 0);
 }
 
-let lastFrame = Date.now();
-// Called once per frame
-function draw() {
-    window.requestAnimationFrame(draw);
+// let lastFrame = Date.now();
+// // Called once per frame
+// function draw() {
+//     window.requestAnimationFrame(draw);
 
-    // number of seconds since the last frame was drawn
-    const delta = (Date.now() - lastFrame) / 1000;
+//     // number of seconds since the last frame was drawn
+//     const delta = (Date.now() - lastFrame) / 1000;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let o = emoteArray.length - 1; o >= 0; o--) {
-        const emoteGroup = emoteArray[o];
+//     for (let o = emoteArray.length - 1; o >= 0; o--) {
+//         const emoteGroup = emoteArray[o];
 
-        // Keep track of where we should be drawing the next emote per message
-        let xOffset = 0;
+//         // Keep track of where we should be drawing the next emote per message
+//         let xOffset = 0;
 
-        for (let i = 0; i < emoteGroup.emotes.length; i++) {
-            const emote = emoteGroup.emotes[i];
+//         for (let i = 0; i < emoteGroup.emotes.length; i++) {
+//             const emote = emoteGroup.emotes[i];
             
-            emoteGroup.y -= (Math.random() + 1) * delta * 30; 
+//             emoteGroup.y -= (Math.random() + 1) * delta * 30; 
 
-            xOffset = emote.gif.canvas.width;
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
-//             ctx.globalCompositeOperation = 'source-over';
+//             xOffset = emote.gif.canvas.width;
+//             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+// //             ctx.globalCompositeOperation = 'source-over';
 
-        }
+//         }
 
-        // Delete a group after 10 seconds
-        if (emoteGroup.spawn < Date.now() - 10000) {
-            emoteArray.splice(o, 1);
-        }
-    }
+//         // Delete a group after 10 seconds
+//         if (emoteGroup.spawn < Date.now() - 10000) {
+//             emoteArray.splice(o, 1);
+//         }
+//     }
 
-    lastFrame = Date.now();
-}
+//     lastFrame = Date.now();
+// }
 
-// add a callback function for when a new message with emotes is sent
-const emoteArray = [];
-ChatInstance.on("emotes", (emotes) => {
-    emoteArray.push({
-        emotes,
-        x: Math.floor(0.2 * canvas.width + Math.random() * 100),
-        y: Math.floor(0.8 * canvas.height),
-        spawn: Date.now()
-    });
-})
+// // add a callback function for when a new message with emotes is sent
+// const emoteArray = [];
+// ChatInstance.on("emotes", (emotes) => {
+//     emoteArray.push({
+//         emotes,
+//         x: Math.floor(0.2 * canvas.width + Math.random() * 100),
+//         y: Math.floor(0.8 * canvas.height),
+//         spawn: Date.now()
+//     });
+// })
 
-draw();
+// draw();
