@@ -39,7 +39,6 @@ function fill_canvas(img) {
     resize();
     
     ctx.drawImage(img, 0, 0);
-       }
 }
 // ctx.globalCompositeOperation = 'destination-out';
 
