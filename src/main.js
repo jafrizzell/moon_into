@@ -34,12 +34,6 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-// var background = new Image();
-// background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/9b633227f46b3b3826c19312eacf91f793a389be/lofi.gif";
-// background.onload = function() {
-//     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-// }
-
 let lastFrame = Date.now();
 // Called once per frame
 function draw() {
@@ -84,6 +78,16 @@ ChatInstance.on("emotes", (emotes) => {
         x: Math.floor(0.1 * canvas.width + Math.random() * 60),
         y: Math.floor(0.65 * canvas.height),
         spawn: Date.now()
+        
+            console.log(emotes);
+    if (emote.name == 'NaM' || emote.name == 'Fishmoley') {}
+    else {
+        emoteArray.push({
+            emotes,
+            x: Math.floor(Math.random() * canvas.width),
+            y: Math.floor(Math.random() * canvas.height),
+            spawn: Date.now()
+    }
     });
 })
 
