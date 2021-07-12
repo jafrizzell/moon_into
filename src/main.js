@@ -32,21 +32,23 @@ resize();
 var img = new Image();
 var ctx = canvas.getContext('2d');
 img.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
+ctx.drawImage(img, 0, 0);
+ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
 // WAIT TILL IMAGE IS LOADED.
-img.onload = function () {
-    fill_canvas(img, ctx);       // FILL THE CANVAS WITH THE IMAGE.
-}
+// img.onload = function () {
+//     fill_canvas(img, ctx);       // FILL THE CANVAS WITH THE IMAGE.
+// }
 
-function fill_canvas(img, ctx) {
+// function fill_canvas(img, ctx) {
 
-    canvas.width = window.width;
-    canvas.height = window.height;
-    console.log(canvas.width);
-    console.log(canvas.height);
-    ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-}
+//     canvas.width = window.width;
+//     canvas.height = window.height;
+//     console.log(canvas.width);
+//     console.log(canvas.height);
+//     ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
+//     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+// }
 
 // ctx.globalCompositeOperation = 'destination-out';
 
