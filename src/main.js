@@ -73,7 +73,8 @@ function draw() {
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
-    console.log(emotes.id());
+    console.log(emotes[name]);
+    console.log(emotes);
     if (emotes.id == 'NaM' || emotes.id == 'FishMoley') {}
     else {
         emoteArray.push({
