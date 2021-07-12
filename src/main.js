@@ -30,7 +30,7 @@ resize();
 window.addEventListener('resize', resize);
 
 var background = new Image();
-background.src = "https://github.com/jafrizzell/moon_intro/blob/9b633227f46b3b3826c19312eacf91f793a389be/lofi.gif";
+background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/lofi.gif";
 background.onload = function() {
     ctx.drawImage(background, 0, 0);
 }
