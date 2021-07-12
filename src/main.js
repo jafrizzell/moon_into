@@ -21,22 +21,17 @@ const ChatInstance = new Chat({
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
-var baseImage = new Image;
+
 
 function resize() {
-
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 resize();
 
-
-baseImage.onload = function() {
-
-    cxt.drawImage(this, 0, 0, canvas.width, canvas.height);
-    ctx.drawImage(this, 0, 0);
-}
+var baseImage = new Image();
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
+document.appendChild(baseImage);
 
 // ctx.globalCompositeOperation = 'destination-out';
 
