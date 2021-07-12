@@ -40,13 +40,12 @@ img.onload = function () {
 
 function fill_canvas(img, ctx) {
 
-    canvas.width = img.width;
-    canvas.height = img.height;
+    canvas.width = window.width;
+    canvas.height = window.height;
     console.log(canvas.width);
-    ctx.fillStyle = "blue";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-        console.log(canvas.height);
-//     ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
+    console.log(canvas.height);
+    ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 }
 
 // ctx.globalCompositeOperation = 'destination-out';
