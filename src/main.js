@@ -31,7 +31,7 @@ resize();
 // GET THE IMAGE.
 var img = new Image();
 var ctx = canvas.getContext('2d');
-img.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
+img.src = 'https://tenor.com/view/lofi-girl-music-gif-22068613';
 ctx.drawImage(img, 0, 0);
 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
