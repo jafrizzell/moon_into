@@ -20,23 +20,25 @@ const ChatInstance = new Chat({
 
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
-const ctx = canvas.getContext('2d');
-
 
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
-resize();
 
-make_base();
+var baseImage = new Image();
+baseImage.scr = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 
-function make_base() {
-    var baseImage = new Image();
-    baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
-    baseImage.onload = function() {
-        ctx.drawImage(baseImage, 0, 0);
-        ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+baseImage.onload = function () {
+    fill_canvas(img);
+}
+
+function fill_canvas(img) {
+    var canvas = document.getElement.Id('canvas');
+    var ctx = canvas.getContext('2d');
+    resize();
+    
+    ctx.drawImage(img, 0, 0);
        }
 }
 // ctx.globalCompositeOperation = 'destination-out';
