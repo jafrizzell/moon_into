@@ -8,9 +8,7 @@
     <style>
         :root {
             background-image: url(https://github.com/jafrizzell/moon_intro/blob/main/intro_000000.png?raw=true);
-            background-repeat: no-repeat;
-            background-size: cover;
-
+            background-size: 100% 100%;
         }
         
         html, body, canvas {
@@ -18,10 +16,21 @@
             height: 100%;
             margin: 0;
         }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
 
     </style>
 </head>
 <body>
-    <img src='https://github.com/jafrizzell/moon_intro/blob/main/Untitled17_20210712161921.png?raw=true' style="max-height:100%; max-width:100%"/>
+<div class='imgbox'>
+    <img class='center-fit' src='https://github.com/jafrizzell/moon_intro/blob/main/Untitled17_20210712161921.png?raw=true'>
+</div>
 </body>
 </html>
