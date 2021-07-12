@@ -34,11 +34,11 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-var background = new Image();
-background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/9b633227f46b3b3826c19312eacf91f793a389be/lofi.gif";
-background.onload = function() {
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-}
+// var background = new Image();
+// background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/9b633227f46b3b3826c19312eacf91f793a389be/lofi.gif";
+// background.onload = function() {
+//     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+// }
 
 let lastFrame = Date.now();
 // Called once per frame
