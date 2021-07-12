@@ -39,11 +39,10 @@ img.onload = function () {
 }
 
 function fill_canvas(img, ctx) {
-    // CREATE CANVAS CONTEXT.
 
     canvas.width = img.width;
     canvas.height = img.height;
-
+    console.log('here')'
     ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
 }
 
