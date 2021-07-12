@@ -39,13 +39,13 @@ img.onload = function () {
 
 function fill_canvas(img) {
     // CREATE CANVAS CONTEXT.
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+    window.canvas = document.getElementById('canvas');
+    window.ctx = canvas.getContext('2d');
 
     canvas.width = img.width;
     canvas.height = img.height;
 
-    ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
+    window.ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
 }
 
 // ctx.globalCompositeOperation = 'destination-out';
@@ -62,7 +62,7 @@ function draw() {
     // number of seconds since the last frame was drawn
     const delta = (Date.now() - lastFrame) / 1000;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    window.ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let o = emoteArray.length - 1; o >= 0; o--) {
         const emoteGroup = emoteArray[o];
@@ -86,7 +86,7 @@ function draw() {
             }
             
             xOffset = emote.gif.canvas.width;
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
+            window.ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
 //             ctx.globalCompositeOperation = 'source-over';
 
         }
