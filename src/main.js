@@ -32,7 +32,7 @@ resize();
 make_base();
 
 function make_base() {
-    baseImage = new Image();
+    var baseImage = new Image(canvas.width, canvas.height);
     baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
     baseImage.onload = function() {
         ctx.drawImage(baseImage, 100, 100);
