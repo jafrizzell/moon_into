@@ -76,12 +76,13 @@ ChatInstance.on("emotes", (emotes) => {
     console.log(emotes.name);
     if (emotes.name == 'NaM' || emotes.name == 'Fishmoley') {}
     else {
-    emoteArray.push({
-        emotes,
-        x: Math.floor(0.1 * canvas.width + Math.random() * 60),
-        y: Math.floor(0.65 * canvas.height),
-        spawn: Date.now()
-    });
-})
+        emoteArray.push({
+            emotes,
+            x: Math.floor(0.1 * canvas.width + Math.random() * 60),
+            y: Math.floor(0.65 * canvas.height),
+            spawn: Date.now()
+        })
+    }
+}
 
 draw();
