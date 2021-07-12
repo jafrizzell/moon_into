@@ -20,6 +20,7 @@ const ChatInstance = new Chat({
 
 var canvas = document.createElement('canvas'),
     ctx = canvas.getContext('2d');
+document.body.appendChild(canvas);
 
 function resize() {
     canvas.width = window.innerWidth;
