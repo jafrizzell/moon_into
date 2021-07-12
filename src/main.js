@@ -32,15 +32,12 @@ resize();
 var baseImage = new Image(canvas.width, canvas.height);
 baseImage.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 baseImage.onload = function() {
-   var imageWidth = this.offsetWidth,
-      imageHeight = this.offsetHeight;
-  this.style.position = 'absolute';
-  this.style.left = (canvas.width - imageWidth)/2 + 'px';
-  this.style.top = (canvas.height - imageHeight)/2 +'px';
+    cxt.drawImage(this, -200, -200, 800, 800);
+    ctx.drawImage(this, 0, 0);
 }
 
 // ctx.globalCompositeOperation = 'destination-out';
-document.body.appendChild(baseImage);
+
 
 window.addEventListener('resize', resize);
 
