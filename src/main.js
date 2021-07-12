@@ -39,22 +39,7 @@ img.onload = function() {
     console.log(canvas.width);
 }
 
-// WAIT TILL IMAGE IS LOADED.
-// img.onload = function () {
-//     fill_canvas(img, ctx);       // FILL THE CANVAS WITH THE IMAGE.
-// }
-
-// function fill_canvas(img, ctx) {
-
-//     canvas.width = window.width;
-//     canvas.height = window.height;
-//     console.log(canvas.width);
-//     console.log(canvas.height);
-//     ctx.drawImage(img, 0, 0);       // DRAW THE IMAGE TO THE CANVAS.
-//     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-// }
-
-// ctx.globalCompositeOperation = 'destination-out';
+ctx.globalCompositeOperation = 'destination-out';
 
 
 window.addEventListener('resize', resize);
