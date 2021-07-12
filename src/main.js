@@ -30,7 +30,6 @@ resize();
 
 // GET THE IMAGE.
 var img = new Image();
-var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 img.src = 'https://github.com/jafrizzell/moon_intro/blob/main/lofi.gif?raw=true';
 
