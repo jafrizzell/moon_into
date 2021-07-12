@@ -49,7 +49,7 @@ function draw() {
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
             
-            emoteGroup.y -= delta * 15; 
+            emoteGroup.y -= (Math.random() + 1) * delta * 30; 
 
             xOffset = emote.gif.canvas.width;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y);
@@ -71,8 +71,8 @@ const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
     emoteArray.push({
         emotes,
-        x: Math.floor(0.5 * (canvas.width - 112)),
-        y: Math.floor(0.8 * (canvas.height - 112)),
+        x: Math.floor(0.5 * canvas.width + Math.random() * 10),
+        y: Math.floor(0.8 * (canvas.height),
         spawn: Date.now()
     });
 })
