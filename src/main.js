@@ -16,6 +16,7 @@ if (query_vars.channels) {
 const ChatInstance = new Chat({
     channels,
     duplicateEmoteLimit: 5,
+    maximumEmoteLimiet: 1,
 })
 
 var canvas = document.createElement('canvas'),
@@ -73,8 +74,8 @@ function draw() {
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
-    console.log(emotes.id);
-    console.log(emotes);
+    console.log(emotes[0].id);
+    console.log(emotes[0]);
     if (emotes.id == 'NaM' || emotes.id == 'FishMoley') {}
     else {
         emoteArray.push({
