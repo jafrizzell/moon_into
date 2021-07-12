@@ -30,7 +30,7 @@ resize();
 window.addEventListener('resize', resize);
 
 var background = new Image();
-background.src = "https://raw.githubusercontent.com/jafrizzell/moon_intro/main/deadlole.JPG";
+background.src = "deadlole.JPG";
 background.onload = function() {
     ctx.drawImage(background, 0, 0);
 }
