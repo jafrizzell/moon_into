@@ -18,9 +18,8 @@ const ChatInstance = new Chat({
     duplicateEmoteLimit: 5,
 })
 
-const canvas = document.createElement('canvas');
-// document.body.appendChild(canvas);
-const ctx = canvas.getContext('2d');
+var canvas = document.createElement('canvas'),
+    ctx = canvas.getContext('2d');
 
 function resize() {
     canvas.width = window.innerWidth;
@@ -30,7 +29,7 @@ resize();
 window.addEventListener('resize', resize);
 
 var background = new Image();
-background.src = "deadlole.JPG";
+background.src = "http://i.imgur.com/yf6d9SX.jpg";
 background.onload = function() {
     ctx.drawImage(background, 0, 0);
 }
