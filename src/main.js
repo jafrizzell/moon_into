@@ -57,7 +57,7 @@ function draw() {
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
             emoteGroup.y -= delta * 20 * (Math.random()+ 1);
-            emoteGroup.x += 25 * delta
+            emoteGroup.x += 25 * delta + Math.sqrt(emoteGroup.y)
             // emoteGroup.x += (Math.random() * 10 * delta + emoteGroup.y ** 2 * 25);
 
             xOffset = emote.gif.canvas.width;
@@ -68,7 +68,7 @@ function draw() {
         }
 
         // Delete a group after 10 seconds
-        if (emoteGroup.spawn < Date.now() - 10000) {
+        if (emoteGroup.spawn < Date.now() - 13000) {
             emoteArray.splice(o, 1);
         }
     }
