@@ -2,7 +2,7 @@ import './main.css';
 import Chat from 'twitch-chat-emotes';
 
 // a default array of twitch channels to join
-let channels = ['MOONMOON'];
+let channels = ['MOONMOON', 'Kyle'];
 
 // the following few lines of code will allow you to add ?channels=channel1,channel2,channel3 to the URL in order to override the default array of channels
 const query_vars = {};
@@ -56,8 +56,9 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.y -= (delta * 20 + Math.random());
-            emoteGroup.x += (Math.random() * 10 * delta + emoteGroup.y ** 2 * 25);
+            emoteGroup.y -= delta * 20 * (Math.random()+ 1);
+            emoteGroun.x += 25 * delta
+            // emoteGroup.x += (Math.random() * 10 * delta + emoteGroup.y ** 2 * 25);
 
             xOffset = emote.gif.canvas.width;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
