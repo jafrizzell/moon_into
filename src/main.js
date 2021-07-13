@@ -33,6 +33,8 @@ window.addEventListener('resize', resize);
 
 var foreground = new Image();
 foreground.src = "https://github.com/jafrizzell/moon_intro/blob/11de50d43478ffc8ad9038640a79b76d05bae936/src/mug.png?raw=true";
+var lampOverlay = new Image();
+lampOverlay.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/lamp_overlay.png?raw=true";
 
 
 
@@ -69,6 +71,7 @@ function draw() {
             emoteArray.splice(o, 1);
         }
     }
+    ctx.drawImage(lampOverlay, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
     lastFrame = Date.now();
 }
