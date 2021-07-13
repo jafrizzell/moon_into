@@ -17,7 +17,7 @@ if (query_vars.channels) {
 const ChatInstance = new Chat({
     channels,
     duplicateEmoteLimit: 5,
-    maximumEmoteLimiet: 1,
+    maximumEmoteLimit: 4,
 })
 
 var canvas = document.createElement('canvas'),
@@ -56,12 +56,18 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.y -= delta * 20 * (Math.random()+ 1);
+            var y_vel = (delta * Math.random() * 10) + 20);
+            emoteGroup.y -= y_vel;
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
 
             xOffset = emote.gif.canvas.width;
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
-
+            
+            if (emote.id == 'moon2M') {
+                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 200, 200);
+            }
+            else {
+                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
+            }
         }
 
         // Delete a group after 10 seconds
