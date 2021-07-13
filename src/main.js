@@ -17,7 +17,6 @@ if (query_vars.channels) {
 const ChatInstance = new Chat({
     channels,
     duplicateEmoteLimit: 5,
-    maximumEmoteLimit: 1000,
 })
 
 var canvas = document.createElement('canvas'),
@@ -56,7 +55,7 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.y -= (delta * Math.random() * 2) + 0.5;
+            emoteGroup.y -= (delta * Math.random() * 0.5) + 0.7;
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
 
             xOffset = emote.gif.canvas.width;
