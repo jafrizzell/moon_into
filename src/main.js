@@ -2,7 +2,7 @@ import './main.css';
 import Chat from 'twitch-chat-emotes';
 
 // a default array of twitch channels to join
-let channels = ['MOONMOON', 'Kyle', 'veibae'];
+let channels = ['MOONMOON', 'Kyle', 'veibae', 'itsRyanHiga', 'Hirona', 'buddha', 'TimTheTatman', 'sodapoppin', 'GMHikaru', 'Formula1'];
 
 // the following few lines of code will allow you to add ?channels=channel1,channel2,channel3 to the URL in order to override the default array of channels
 const query_vars = {};
