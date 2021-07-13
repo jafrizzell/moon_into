@@ -58,9 +58,9 @@ function draw() {
             const emote = emoteGroup.emotes[i];
             emoteGroup.y -= delta * 20 * (Math.random()+ 1);
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
-            // emoteGroup.x += (Math.random() * 10 * delta + emoteGroup.y ** 2 * 25);
 
             xOffset = emote.gif.canvas.width;
+            ctx.globalAlpha = 13000 - (Date.now() - emoteGroup.spawn);
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
 
 //             ctx.globalCompositeOperation = 'source-over';
