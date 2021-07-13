@@ -2,7 +2,7 @@ import './main.css';
 import Chat from 'twitch-chat-emotes';
 
 // a default array of twitch channels to join
-let channels = ['MOONMOON', 'Kyle'];
+let channels = ['MOONMOON', 'Kyle', 'Veibae'];
 
 // the following few lines of code will allow you to add ?channels=channel1,channel2,channel3 to the URL in order to override the default array of channels
 const query_vars = {};
@@ -60,8 +60,8 @@ function draw() {
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
 
             xOffset = emote.gif.canvas.width;
-            ctx.globalAlpha = 0.5
-//             ctx.globalAlpha = 13000 - (Date.now() - emoteGroup.spawn);
+//             ctx.globalAlpha = 0.5
+            ctx.globalAlpha = 13000 - (Date.now() - emoteGroup.spawn);
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
 
         }
