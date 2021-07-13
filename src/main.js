@@ -81,7 +81,7 @@ ChatInstance.on("emotes", (emotes) => {
     else {
         emoteArray.push({
             emotes,
-            const randX = Math.floor(Math.random() * months.length)
+            const randX = Math.floor(Math.random() * xArray.length)
             x: MxArray[randX],
             y: Math.floor(0.65 * canvas.height),
             spawn: Date.now()
