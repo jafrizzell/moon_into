@@ -60,8 +60,6 @@ function draw() {
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
 
             xOffset = emote.gif.canvas.width;
-//             ctx.globalAlpha = 0.5
-            ctx.globalAlpha = 13000 - (Date.now() - emoteGroup.spawn);
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
 
         }
@@ -71,7 +69,6 @@ function draw() {
             emoteArray.splice(o, 1);
         }
     }
-//     ctx.globalAlpha = 1
     ctx.drawImage(lampOverlay, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
     lastFrame = Date.now();
