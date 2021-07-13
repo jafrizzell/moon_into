@@ -69,7 +69,7 @@ function draw() {
         }
 
         // Delete a group after 10 seconds
-        if (emoteGroup.spawn < Date.now() - 13000) {
+        if (emoteGroup.spawn < Date.now() - 6000) {
             emoteArray.splice(o, 1);
         }
     }
