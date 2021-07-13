@@ -32,9 +32,9 @@ resize();
 window.addEventListener('resize', resize);
 
 var foreground = new Image();
-foreground.src = "https://github.com/jafrizzell/moon_intro/blob/11de50d43478ffc8ad9038640a79b76d05bae936/src/mug.png?raw=true";
+foreground.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/mug_overlay.png?raw=true";
 var lampOverlay = new Image();
-lampOverlay.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/lamp_overlay.png?raw=true";
+lampOverlay.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/lamp.png?raw=true";
 
 
 
