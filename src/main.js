@@ -2,7 +2,7 @@ import './main.css';
 import Chat from 'twitch-chat-emotes';
 
 // a default array of twitch channels to join
-let channels = ['MOONMOON', 'Kyle', 'Veibae'];
+let channels = ['MOONMOON', 'Kyle', 'veibae'];
 
 // the following few lines of code will allow you to add ?channels=channel1,channel2,channel3 to the URL in order to override the default array of channels
 const query_vars = {};
@@ -17,7 +17,7 @@ if (query_vars.channels) {
 const ChatInstance = new Chat({
     channels,
     duplicateEmoteLimit: 5,
-    maximumEmoteLimit: 4,
+    maximumEmoteLimit: 1000,
 })
 
 var canvas = document.createElement('canvas'),
@@ -56,7 +56,7 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.y -= (delta * Math.random() * 5) + 0.35;
+            emoteGroup.y -= (delta * Math.random() * 2) + 0.5;
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
 
             xOffset = emote.gif.canvas.width;
