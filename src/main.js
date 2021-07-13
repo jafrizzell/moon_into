@@ -55,7 +55,7 @@ function draw() {
 
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.y -= (delta * 10) * (Math.random() + 1);
+            emoteGroup.y -= (delta * 10) * (Math.random() + 1.4);
             emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
 
             xOffset = emote.gif.canvas.width;
