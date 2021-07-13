@@ -75,12 +75,14 @@ function draw() {
 
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
+const xArray = [0.09 * canvas.width, 0.1 * canvas.width, 1.1 * canvas.width]
 ChatInstance.on("emotes", (emotes) => {
     if (emotes[0].id == 'NaM' || emotes[0].id == 'FishMoley') {}
     else {
         emoteArray.push({
             emotes,
-            x: Math.floor(0.1 * canvas.width + Math.random() * 60),
+            const randX = Math.floor(Math.random() * months.length)
+            x: MxArray[randX],
             y: Math.floor(0.65 * canvas.height),
             spawn: Date.now()
         })
