@@ -32,7 +32,7 @@ resize();
 window.addEventListener('resize', resize);
 
 var foreground = new Image();
-foreground.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/Untitled17_20210712161921.png?raw=true";
+foreground.src = "src/mug.png";
 
 
 
