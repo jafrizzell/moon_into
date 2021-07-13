@@ -63,8 +63,6 @@ function draw() {
             ctx.globalAlpha = 13000 - (Date.now() - emoteGroup.spawn);
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
 
-//             ctx.globalCompositeOperation = 'source-over';
-
         }
 
         // Delete a group after 10 seconds
@@ -72,6 +70,7 @@ function draw() {
             emoteArray.splice(o, 1);
         }
     }
+    ctx.globalAlpha = 1
     ctx.drawImage(lampOverlay, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
     lastFrame = Date.now();
