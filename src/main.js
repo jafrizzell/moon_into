@@ -32,7 +32,7 @@ resize();
 window.addEventListener('resize', resize);
 
 var foreground = new Image();
-foreground.src = "src/mug.png";
+foreground.src = "https://github.com/jafrizzell/moon_intro/blob/11de50d43478ffc8ad9038640a79b76d05bae936/src/mug.png";
 
 
 
