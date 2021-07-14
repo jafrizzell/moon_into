@@ -73,7 +73,7 @@ function draw() {
 const emoteArray = [];
 let prevTime = Date.now();
 ChatInstance.on("emotes", (emotes) => {
-    if (Date.now() - prevTime > 1250) {
+    if (Date.now() - prevTime > 2000) {
         prevTime = Date.now();
         const type = Math.floor(Math.random() * 100);
         let obs = 0
@@ -89,7 +89,7 @@ ChatInstance.on("emotes", (emotes) => {
             yVal = canvas.height * 0.45;
             vel = 350;
         }
-        else {
+        else if (85 <= type <= 100) {
             obs = 2;
             yVal = canvas.height * 0.25
             vel = 350;
