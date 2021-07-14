@@ -56,7 +56,16 @@ function draw() {
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
             emoteGroup.x -= delta * emoteGroup.velocity;
-            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
+            if (emoteGroup.obstacle == 0) {
+                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 84, 84);
+            }
+            else if (emoteGroup.obstacle == 1) {
+                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 112, 112);
+            }
+            else if (emoteGroup.obstacle === 2 ||  3) {
+                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
+            }
+
             xOffset = emote.gif.canvas.width;
         }
 
@@ -80,18 +89,23 @@ ChatInstance.on("emotes", (emotes) => {
         let obs = 0
         var yVal = 0;
         let vel = 0;
-        if (type < 70) {
+        if (type < 35) {
             obs = 0;
             yVal = canvas.height * 0.55;
             vel = 290;
         }
-        else if (type < 78) {
+        else if (type < 70) {
             obs = 1;
+            yVal = canvas.height * 0.55;
+            vel = 290;
+        }
+        else if (type < 78) {
+            obs = 2;
             yVal = canvas.height * 0.45;
             vel = 350;
         }
         else if (type < 100) {
-            obs = 2;
+            obs = 3;
             yVal = canvas.height * 0.30;
             vel = 350;
         }
