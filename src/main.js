@@ -89,13 +89,14 @@ ChatInstance.on("emotes", (emotes) => {
     if (emotes[0].id == 'NaM' || emotes[0].id == 'FishMoley') {}
     else {
         const type = Math.floor(Math.random() * 100);
+        var yVal = 0;
         if (type < 70) {
             const obs = 0;
-            const yVal = canvas.height * 0.5;
+            yVal = canvas.height * 0.5;
         }
         else {
             const obs = 1;
-            const yVal = canvas.height * 0.6;
+            yVal = canvas.height * 0.6;
         }
         emoteArray.push({
             emotes,
