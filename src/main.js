@@ -80,12 +80,12 @@ ChatInstance.on("emotes", (emotes) => {
         let obs = 0
         var yVal = 0;
         let vel = 0;
-        if (type < 60) {
+        if (type < 70) {
             obs = 0;
             yVal = canvas.height * 0.55;
             vel = 290;
         }
-        else if (type < 80) {
+        else if (type < 78) {
             obs = 1;
             yVal = canvas.height * 0.45;
             vel = 350;
