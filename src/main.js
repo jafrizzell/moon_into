@@ -71,11 +71,11 @@ function draw() {
 
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
-const prevTime = Date.now();
+let prevTime = Date.now();
 ChatInstance.on("emotes", (emotes) => {
     console.log(prevTime - Date.now());
     if (Date.now() - prevTime > 1250) {
-            prevTime = Date.now();
+        prevTime = Date.now();
         const type = Math.floor(Math.random() * 100);
         var yVal = 0;
         if (type < 70) {
