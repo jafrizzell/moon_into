@@ -61,7 +61,7 @@ function draw() {
         }
 
         // Delete a group when it reaches the left side of the scrawler
-        if (emoteGroup.x < canvas.width) {
+        if (emoteGroup.x < canvas.width * 0.01) {
             emoteArray.splice(o, 1);
         }
     }
@@ -90,15 +90,14 @@ ChatInstance.on("emotes", (emotes) => {
             yVal = canvas.height * 0.45;
             vel = 350;
         }
-        else if (80 <= type <= 100) {
+        else if (80 <= type < 100) {
             obs = 2;
             yVal = canvas.height * 0.35;
             vel = 350;
         }
-        console.log(obs);
         emoteArray.push({
             emotes,
-            x: canvas.width,
+            x: canvas.width * 0.99,
             y: yVal,
             velocity: vel,
             obstacle: 0,
