@@ -98,7 +98,7 @@ ChatInstance.on("emotes", (emotes) => {
             emotes,
             x: canvas.width * 0.7,
             y: yVal,
-            velocity: vel
+            velocity: vel,
             obstacle: 0,
             spawn: Date.now()
         })
