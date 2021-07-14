@@ -73,28 +73,30 @@ function draw() {
 const emoteArray = [];
 let prevTime = Date.now();
 ChatInstance.on("emotes", (emotes) => {
-        if (Date.now() - prevTime < 1250) {}
-        else {
-            prevTime = Date.now();
-            const type = Math.floor(Math.random() * 100);
-            var yVal = 0;
-            if (type < 70) {
-                const obs = 0;
-                yVal = canvas.height * 0.5;
-            }
-            else {
-                const obs = 1;
-                yVal = canvas.height * 0.6;
-            }
-            emoteArray.push({
-                emotes,
-                x: canvas.width * 0.7,
-                y: yVal,
-                obstacle: 0,
-                spawn: Date.now()
-            })
-            
+    console.log(prevTime);
+    if (Date.now() - prevTime < 1250) {}
+    else {
+        prevTime = Date.now();
+        console.log(Date.now());
+        const type = Math.floor(Math.random() * 100);
+        var yVal = 0;
+        if (type < 70) {
+            const obs = 0;
+            yVal = canvas.height * 0.5;
         }
+        else {
+            const obs = 1;
+            yVal = canvas.height * 0.6;
+        }
+        emoteArray.push({
+            emotes,
+            x: canvas.width * 0.7,
+            y: yVal,
+            obstacle: 0,
+            spawn: Date.now()
+        })
+
+    }
 })
 
 draw();
