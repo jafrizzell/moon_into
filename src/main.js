@@ -49,33 +49,17 @@ function draw() {
 
     for (let o = emoteArray.length - 1; o >= 0; o--) {
         const emoteGroup = emoteArray[o];
-        console.log(emoteGroup);
-        console.log(emoteGroup.emotes);
         
-        if (emoteArray.length > 1) {
-            // Keep track of where we should be drawing the next emote per message
-            let xOffset = 0;
-            
-            for (let i = 0; i < emoteGroup.emotes.length; i++) {
-                const emote = emoteGroup.emotes[i];
-                console.log(emote);
-                
-                if (i>0) { 
-                    const prev_emote_spawn = emoteGroup.emotes[i-1].spawn;
-                    
-                    if (emoteGroup.spawn - prev_emote_spawn > 2000) {
-                        xOffset = emote.gif.canvas.width;
-                        emoteGroup.x -= delta * 20;
-                        ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
-                    }
-                  
-                }
+        // Keep track of where we should be drawing the next emote per message
+        let xOffset = 0;
+        const prev_emote_spawn = emoteArray[-2].emotes[i-1].spawn;
 
-            }
-            
+        if (emoteGroup.spawn - prev_emote_spawn > 2000) {
+            xOffset = emote.gif.canvas.width;
+            emoteGroup.x -= delta * 20;
+            ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
         }
 
-        
         // Delete a group when it reaches the left side of the scrawler
         if (emoteGroup.x < canvas.width * 0.3) {
             emoteArray.splice(o, 1);
@@ -89,7 +73,7 @@ function draw() {
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
-    if (emotes[0].id == 'NaM' || emotes[0].id == 'FishMoley') {}
+    if (Date.now() - emoteArray[-1].spawn < 1250) {}
     else {
         const type = Math.floor(Math.random() * 100);
         var yVal = 0;
