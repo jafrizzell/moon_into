@@ -1,6 +1,6 @@
 :root {
     background-image: url(https://github.com/jafrizzell/moon_intro/blob/dinosaur/src/bg.gif?raw=true);
-    background-size: 100% 100%;
+    background-size: contain;
 }
 
 html,
