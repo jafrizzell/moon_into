@@ -91,7 +91,7 @@ ChatInstance.on("emotes", (emotes) => {
         }
         else if (85 <= type <= 100) {
             obs = 2;
-            yVal = canvas.height * 0.25
+            yVal = canvas.height * 0.25;
             vel = 350;
         }
         emoteArray.push({
