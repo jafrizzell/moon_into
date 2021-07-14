@@ -52,12 +52,11 @@ function draw() {
         
         // Keep track of where we should be drawing the next emote per message
         let xOffset = 0;
-        const prev_emote_spawn = emoteArray[-2].emotes[i-1].spawn;
-
-        if (emoteGroup.spawn - prev_emote_spawn > 2000) {
-            xOffset = emote.gif.canvas.width;
-            emoteGroup.x -= delta * 20;
+        for (let i = 0; i < emoteGroup.emotes.length; i++) {
+            const emote = emoteGroup.emotes[i];
+            emoteGroup.x -= canvas.width * 20;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
+            xOffset = emote.gif.canvas.width;
         }
 
         // Delete a group when it reaches the left side of the scrawler
@@ -93,7 +92,7 @@ ChatInstance.on("emotes", (emotes) => {
         })
     }
     else {
-        if (Date.now() - emoteArray[-1].spawn < 1250) {}
+        if (Date.now() - emoteArray[-1].emotes.spawn < 1250) {}
         else {
             const type = Math.floor(Math.random() * 100);
             var yVal = 0;
