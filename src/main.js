@@ -54,7 +54,7 @@ function draw() {
         let xOffset = 0;
         for (let i = 0; i < emoteGroup.emotes.length; i++) {
             const emote = emoteGroup.emotes[i];
-            emoteGroup.x -= delta * 20;
+            emoteGroup.x -= delta * 200;
             ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
             xOffset = emote.gif.canvas.width;
         }
@@ -76,14 +76,19 @@ ChatInstance.on("emotes", (emotes) => {
     if (Date.now() - prevTime > 1250) {
         prevTime = Date.now();
         const type = Math.floor(Math.random() * 100);
+        let obs = 0
         var yVal = 0;
         if (type < 70) {
-            const obs = 0;
-            yVal = canvas.height * 0.5;
+            obs = 0;
+            yVal = canvas.height * 0.55;
+        }
+        else if (70 <= type < 85) {
+            obs = 1;
+            yVal = canvas.height * 0.65;
         }
         else {
-            const obs = 1;
-            yVal = canvas.height * 0.6;
+            obs = 2;
+            yVal = canvas.height * 0.85
         }
         emoteArray.push({
             emotes,
