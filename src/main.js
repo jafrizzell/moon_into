@@ -17,6 +17,7 @@ if (query_vars.channels) {
 const ChatInstance = new Chat({
     channels,
     duplicateEmoteLimit: 5,
+    maximumEmoteLimit: 1,
 })
 
 var canvas = document.createElement('canvas'),
@@ -79,17 +80,17 @@ ChatInstance.on("emotes", (emotes) => {
         let obs = 0
         var yVal = 0;
         let vel = 0;
-        if (type < 70) {
+        if (type < 60) {
             obs = 0;
             yVal = canvas.height * 0.55;
             vel = 250;
         }
-        else if (70 <= type < 85) {
+        else if (60 <= type < 80) {
             obs = 1;
             yVal = canvas.height * 0.45;
             vel = 350;
         }
-        else if (85 <= type <= 100) {
+        else if (80 <= type <= 100) {
             obs = 2;
             yVal = canvas.height * 0.25;
             vel = 350;
