@@ -71,13 +71,11 @@ function draw() {
 
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
-let prevTime = Date.now();
+const prevTime = Date.now();
 ChatInstance.on("emotes", (emotes) => {
-    console.log(prevTime);
-    if (Date.now() - prevTime < 1250) {}
-    else {
-        prevTime = Date.now();
-        console.log(Date.now());
+    console.log(prevTime - Date.now());
+    if (Date.now() - prevTime > 1250) {
+            prevTime = Date.now();
         const type = Math.floor(Math.random() * 100);
         var yVal = 0;
         if (type < 70) {
@@ -95,7 +93,6 @@ ChatInstance.on("emotes", (emotes) => {
             obstacle: 0,
             spawn: Date.now()
         })
-
     }
 })
 
