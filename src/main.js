@@ -85,7 +85,7 @@ ChatInstance.on("emotes", (emotes) => {
             yVal = canvas.height * 0.55;
             vel = 290;
         }
-        else if (60 <= type < 80) {
+        if (60 <= type < 80) {
             obs = 1;
             yVal = canvas.height * 0.45;
             vel = 350;
