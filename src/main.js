@@ -49,6 +49,8 @@ function draw() {
 
     for (let o = emoteArray.length - 1; o >= 0; o--) {
         const emoteGroup = emoteArray[o];
+        console.log(emoteGroup);
+        console.log(emoteGroup.emotes);
         
         if (emoteArray.length > 1) {
             // Keep track of where we should be drawing the next emote per message
@@ -56,6 +58,7 @@ function draw() {
             
             for (let i = 0; i < emoteGroup.emotes.length; i++) {
                 const emote = emoteGroup.emotes[i];
+                console.log(emote);
                 
                 if (i>0) { 
                     const prev_emote_spawn = emoteGroup.emotes[i-1].spawn;
