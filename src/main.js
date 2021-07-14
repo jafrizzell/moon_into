@@ -73,25 +73,28 @@ function draw() {
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
 ChatInstance.on("emotes", (emotes) => {
-    if (Date.now() - emoteArray[-1].spawn < 1250) {}
+    if (emoteArray.length = 0) {}
     else {
-        const type = Math.floor(Math.random() * 100);
-        var yVal = 0;
-        if (type < 70) {
-            const obs = 0;
-            yVal = canvas.height * 0.5;
-        }
+        if (Date.now() - emoteArray[-1].spawn < 1250) {}
         else {
-            const obs = 1;
-            yVal = canvas.height * 0.6;
+            const type = Math.floor(Math.random() * 100);
+            var yVal = 0;
+            if (type < 70) {
+                const obs = 0;
+                yVal = canvas.height * 0.5;
+            }
+            else {
+                const obs = 1;
+                yVal = canvas.height * 0.6;
+            }
+            emoteArray.push({
+                emotes,
+                x: canvas.width * 0.7,
+                y: yVal,
+                obstacle: 0,
+                spawn: Date.now()
+            })
         }
-        emoteArray.push({
-            emotes,
-            x: canvas.width * 0.7,
-            y: yVal,
-            obstacle: 0,
-            spawn: Date.now()
-        })
     }
 })
 
