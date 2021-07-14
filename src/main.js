@@ -30,10 +30,10 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
-var foreground = new Image();
-foreground.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/mug_overlay.png?raw=true";
-var lampOverlay = new Image();
-lampOverlay.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/lamp.png?raw=true";
+// var foreground = new Image();
+// foreground.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/mug_overlay.png?raw=true";
+// var lampOverlay = new Image();
+// lampOverlay.src = "https://github.com/jafrizzell/moon_intro/blob/main/src/lamp.png?raw=true";
 
 
 
@@ -49,46 +49,59 @@ function draw() {
 
     for (let o = emoteArray.length - 1; o >= 0; o--) {
         const emoteGroup = emoteArray[o];
-
-        // Keep track of where we should be drawing the next emote per message
-        let xOffset = 0;
-
-        for (let i = 0; i < emoteGroup.emotes.length; i++) {
-            const emote = emoteGroup.emotes[i];
-            emoteGroup.y -= (delta * 10) * (Math.random() + 1.4);
-            emoteGroup.x += Math.pow((Date.now() - emoteGroup.spawn)/20000, 2) * 5
-
-            xOffset = emote.gif.canvas.width;
+        
+        if (emoteArray.length > 1) {
+            // Keep track of where we should be drawing the next emote per message
+            let xOffset = 0;
             
-            if (emote.id == 'moon2M') {
-                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 200, 200);
+            for (let i = 0; i < emoteGroup.emotes.length; i++) {
+                const emote = emoteGroup.emotes[i];
+                
+                if (i>0) { 
+                    const prev_emote_spawn = emoteGroup.emotes[i-1].spawn;
+                    
+                    if (emoteGroup.spawn - prev_emote_spawn > 2000) {
+                        xOffset = emote.gif.canvas.width;
+                        emoteGroup.x -= delta * 20;
+                        ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
+                    }
+                  
+                }
+
             }
-            else {
-                ctx.drawImage(emote.gif.canvas, xOffset + emoteGroup.x, emoteGroup.y, 56, 56);
-            }
+            
         }
 
-        // Delete a group after 10 seconds
-        if (emoteGroup.spawn < Date.now() - 6000) {
+        
+        // Delete a group when it reaches the left side of the scrawler
+        if (emoteGroup.x < canvas.width * 0.3) {
             emoteArray.splice(o, 1);
         }
     }
-    ctx.drawImage(lampOverlay, 0, 0, canvas.width, canvas.height);
-    ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
+//     ctx.drawImage(lampOverlay, 0, 0, canvas.width, canvas.height);
+//     ctx.drawImage(foreground, 0, 0, canvas.width, canvas.height);
     lastFrame = Date.now();
 }
 
 // add a callback function for when a new message with emotes is sent
 const emoteArray = [];
-var xArray = [0.09 * canvas.width, 0.1 * canvas.width, 1.1 * canvas.width];
 ChatInstance.on("emotes", (emotes) => {
     if (emotes[0].id == 'NaM' || emotes[0].id == 'FishMoley') {}
     else {
-        const randX = Math.floor(Math.random() * xArray.length);
+        const type = Math.floor(Math.random() * 100);
+        if (type < 70) {
+            const obs = 0;
+            const yVal = canvas.height * 0.5;
+        }
+        else {
+            const obs = 1;
+            const yVal = canvas.height * 0.6;
+        }
         emoteArray.push({
             emotes,
-            x: xArray[randX],
-            y: Math.floor(0.65 * canvas.height),
+            x: canvas.width * 0.7,
+            y: yVal,
+            obstacle: 0,
             spawn: Date.now()
         })
     }
